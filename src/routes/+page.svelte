@@ -1,5 +1,5 @@
 <script>
-  import App from '$lib/components/bday/App.svelte'
+  import App from '$lib/components/actual/App.svelte'
 </script>
 
 <div>

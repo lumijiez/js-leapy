@@ -18,6 +18,8 @@ Title: Cloud Station
   export const { actions, mixer } = useGltfAnimations(gltf, ref)
 
   const component = forwardEventHandlers()
+
+  $: $actions['Take 001']?.play();
 </script>
 
 <T is={ref} dispose={false} {...$$restProps} bind:this={$component}>

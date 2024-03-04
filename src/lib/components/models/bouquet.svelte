@@ -17,6 +17,40 @@ Title: Bouquet
   const gltf = useGltf('/models/bouquet.glb')
   export const { actions, mixer } = useGltfAnimations(gltf, ref)
 
+  export let opacity;
+
+  let modelRef;
+
+gltf.then((model) => {
+  modelRef = model;
+  modelRef.materials['heart'].transparent = true;
+  modelRef.materials['paper'].transparent = true;
+  modelRef.materials['pasted__05_-_Default'].transparent = true;
+  modelRef.materials['pasted__leaf'].transparent = true;
+  modelRef.materials['pasted__lower'].transparent = true;
+  modelRef.materials['petal1'].transparent = true;
+  modelRef.materials['petal2'].transparent = true;
+  modelRef.materials['petal3'].transparent = true;
+  modelRef.materials['petal3'].transparent = true;
+  modelRef.materials['ribbon1'].transparent = true;
+});
+
+ $: if(modelRef) {
+  modelRef.materials['heart'].opacity = opacity;
+  modelRef.materials['paper'].opacity = opacity;
+  modelRef.materials['pasted__05_-_Default'].opacity = opacity;
+  modelRef.materials['pasted__leaf'].opacity = opacity;
+  modelRef.materials['pasted__lower'].opacity = opacity;
+  modelRef.materials['petal1'].opacity = opacity;
+  modelRef.materials['petal2'].opacity = opacity;
+  modelRef.materials['petal3'].opacity = opacity;
+  modelRef.materials['petal3'].opacity = opacity;
+  modelRef.materials['ribbon1'].opacity = opacity;
+
+ } 
+
+ $: $actions['rotate']?.play();
+
   const component = forwardEventHandlers()
 </script>
 

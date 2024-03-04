@@ -40,6 +40,7 @@
   "type": "module",
   "dependencies": {
     "@types/three": "^0.161.2",
+    "axios": "^1.6.7",
     "svelte-tweakpane-ui": "^1.2.0"
   }
 }

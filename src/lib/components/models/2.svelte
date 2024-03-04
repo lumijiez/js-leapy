@@ -19,7 +19,7 @@ Command: npx @threlte/gltf@2.0.1 D:\Source\leapy\static\models\2.glb --root /mod
   {#await gltf}
     <slot name="fallback" />
   {:then gltf}
-    <T.Mesh
+    <T.Mesh castShadow receiveShadow
       geometry={gltf.nodes.Text.geometry}
       material={gltf.materials['Material.001']}
       rotation={[Math.PI / 2, 0, 0]}
